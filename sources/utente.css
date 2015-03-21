@@ -1,0 +1,162 @@
+body{
+
+	background: url('images/sfondo_body.jpg');
+	background-size:100%; 
+	text-align:center; 
+	font-family:arial; 
+	font-size:12px;
+}
+
+div#contenitore{
+	background:url('images/contenitore.jpg'); 
+	width:915px;
+	margin:0 auto; 
+	text-align:left;
+}
+
+
+div#header{
+	background:url('images/logo/header.png') no-repeat left top; 
+	background-size:100%;
+	height:200px;
+}
+
+
+#logo{
+	padding-left:100px;
+	padding-top:40px;
+}
+
+div#colsx {
+	
+	background: url('images/corposx.jpg');
+	background-attachment:fixed;
+	background-size: 100%;
+	width:696px; 
+	float:left; 
+	border-right:1px solid #CCC;
+	min-height: 600px;
+	
+}
+
+#menu{
+	width: 696px;
+	height: 50px;
+	margin: 0;
+	background: url(images/menu/menu.jpg) no-repeat left top;
+ }
+ 
+ #menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+} 
+
+#menu li {
+	display: inline;
+	margin: 0px;
+} 
+
+#menu ul li a {
+	height:33px;
+	display: block;
+	float: left;
+	padding: 17px 15px 0 15px;
+	font: bold 12px Arial;
+	color: #FFF;
+	text-decoration: none;
+	background: url('images/menu/separator.png') no-repeat right center;
+}
+
+#menu ul li a:hover {
+	color:#FFF;
+	background: url('images/menu/hover.png') repeat-x left top;
+}
+
+span {font-size: 18px; font-weight: bold; color: white;}
+
+
+div#coldx 		{  color:#FFF; width:157px; float:left; padding:10px; 
+				 border-top:1px solid #333;}
+				 
+#segno_descrizione{
+	position: relative;
+	font-weight: bold;
+	text-align:center;
+}
+
+#segno{
+	position: relative;
+	left: 200px;
+}
+
+
+/*FORM COLONNA DESTRA */
+	
+#cerca{
+	position: relative;
+	width: 130px;
+	height: 100px;
+}
+
+.bottone{
+	position:relative;
+	width: 130px;
+	
+}
+
+.input_type{
+	width:120px;
+}
+
+.fieldset{
+	width:180px;
+	color:white;
+}
+
+.div_dx{
+	position: relative;
+	height: 100px;
+}
+
+.tabella{
+	color: white;
+}
+
+.funzionalita{
+	position: relative;
+	height: 65px;
+}
+
+.cella {width:120px; overflow: auto;}
+
+
+div#footer 		{background:#333; clear:left; border-top:1px solid #CCC; text-align:center; 
+				 font-style:italic;}
+
+#element_6{
+	overflow : auto;
+	height:600px;
+}
+
+
+.span_ele{
+	font-style: italic;
+	
+}
+
+.div_ele{
+	padding: 100px 40px 20px 40px; 
+}
+
+				 
+.clearlft		{clear:left;}
+
+
+
+
+
+
+
+
+

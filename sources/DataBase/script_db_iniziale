@@ -1,0 +1,70 @@
+create database JSI;
+use JSI;
+
+
+create table Utenti(
+IDuser int AUTO_INCREMENT,
+cognome varchar(50),
+nome varchar(50),
+email varchar(30),
+username varchar(30),
+pass varchar(50),
+isAdmin enum('true','false'),
+PRIMARY KEY(IDuser)
+);
+
+create table File(
+IDfile int AUTO_INCREMENT,
+IDuser int,
+nome varchar(50),
+visibilita enum('privato','pubblico'),
+descrizione varchar(200),
+PRIMARY KEY(IDfile),
+FOREIGN KEY(IDuser) REFERENCES Utenti(IDuser) ON DELETE SET NULL
+);
+
+create table ListAmici(
+IDlista int AUTO_INCREMENT,
+IDuser int ,
+IDfriend int,
+aggiornamenti enum('true','false'),
+PRIMARY KEY(IDlista),
+FOREIGN KEY(IDuser) REFERENCES Utenti(IDuser) ON DELETE CASCADE
+);
+
+create table Messaggio(
+IDmess int AUTO_INCREMENT,
+IDusermsg int,
+IDdestinatario int,
+oggetto varchar(100),
+testo varchar(500),
+PRIMARY KEY(IDmess),
+FOREIGN KEY(IDusermsg) REFERENCES Utenti(IDuser)ON DELETE CASCADE,
+FOREIGN KEY(IDdestinatario) REFERENCES Utenti(IDuser)
+);
+
+create table CasellaPostale(
+IDcasella int AUTO_INCREMENT,
+IDuser int,
+dimensione int(50),
+PRIMARY KEY(IDcasella),
+FOREIGN KEY(IDuser) REFERENCES Utenti(IDuser) ON DELETE CASCADE
+);
+
+INSERT INTO Utenti Values('','supremo','amministratore','JSI@gmail.com','admin','hoho','true');
+INSERT INTO Utenti Values('','Supercazzola','Antani','sbiriduta@gmail.com','antani0','antani','false');
+INSERT INTO Utenti Values('','Degli Ambrogi','Ambrogio','ambrogio@gmail.com','Ambrogino','ambrogio','false');
+INSERT INTO Utenti Values('','Fiorello','Gino','ginof@gmail.com','Giggino','gigi','false');
+INSERT INTO Utenti Values('','Degli Alfredi','Alfredo','adeglia@gmail.com','Alfredo','batman','false');
+
+INSERT INTO File Values('','2','appunti.pdf','pubblico','Appunti di IS');
+INSERT INTO File Values('','3','lista.txt','privato','Lista della spesa');
+INSERT INTO File Values('','2','elenco.txt','privato','Elenco delle cose da fare prima di morire');
+INSERT INTO File Values('','2','orsacchiotto.avi','privato','Un film da non far vedere a nessuno!');
+INSERT INTO File Values('','2','dick in a box.avi','pubblico','Regalo per amore!');
+
+INSERT INTO ListAmici Values('','2','3','false');
+INSERT INTO ListAmici Values('','2','4','false');
+INSERT INTO ListAmici Values('','3','4','false');
+INSERT INTO ListAmici Values('','4','2','false');
+
